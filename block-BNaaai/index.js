@@ -1,5 +1,8 @@
 var url = require("url");
-var urlString =
-  "https://blog.altcampus.io:80/students/register?name=altcampus&gender=male";
-const parsedUrl = url.parse(urlString, true);
-console.log(parsedUrl);
+const parsedUrl = url.parse(
+  "https://blog.altcampus.io:80/students/register?name=altcampus&gender=male",
+  true
+);
+// console.log(parsedUrl);
+console.log(parsedUrl.pathname, parsedUrl.query);
+console.log(parsedUrl.host, parsedUrl.protocol);
