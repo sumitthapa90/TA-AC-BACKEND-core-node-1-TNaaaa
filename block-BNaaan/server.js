@@ -9,10 +9,10 @@ var http = require("http");
 var server = http.createServer(handleServer);
 
 function handleServer(request, response) {
-  console.log(request.method);
+  console.log(request.header);
+  console.log(request.method, request.url);
   response.end("Welcome Node.js");
 }
 server.listen(3000, () => {
   console.log("server lisiting on port 3000");
 });
-
