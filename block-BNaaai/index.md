@@ -5,12 +5,12 @@ writeCode
 ```js
 // create file index.js
 var url = require("url");
-const parsedUrl = url.parse(
-  "https://blog.altcampus.io:80/students/register?name=altcampus&gender=male",
-  true
-);
+var urlString =
+  "https://blog.altcampus.io:80/students/register?name=altcampus&gender=male";
+const parsedUrl = url.parse(urlString, true);
 console.log(parsedUrl);
 ```
+
 - console parsedUrl.pathname
 - console parsedUrl.query
 - console.log parsed Url host and protocol
