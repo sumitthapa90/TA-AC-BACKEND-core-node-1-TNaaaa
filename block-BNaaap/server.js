@@ -9,7 +9,7 @@ var server = http.createServer(handleServer);
 function handleServer(req, res) {
   console.log(req.method);
   res.statusCode = 201;
-  res.setHeader("./Content-Type", "text/html");
+  res.setHeader("Content-Type", "text/html");
   res.end("<h1>Welcom Alt Campus</h1>");
 }
 server.listen(4444, () => {
