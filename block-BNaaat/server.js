@@ -11,32 +11,28 @@ var http = require("http");
 var fs = require("fs");
 var server = http.createServer(handleServer);
 
-function handleServer(res, req) {
+function handleServer(req, res) {
   if (req.method === "GET" && req.url === "./file") {
     fs.readFile("./node.html", (err, content) => {
-      if (err) console.log(error);
-      res.end(content);
+      if (err) console.log(err);
+      res.setHeader("Content-Type", "text/html");
+      res.end(content)
     });
   }
 }
-
-server.listen(5555, () => {
-  console.log("server will lisitin at port 5555");
-});
-
 // create Read Stream
 
-var http = require("http");
+// var http = require("http");
 
-var fs = require("fs");
-var server = http.createServer(handleServer);
+// var fs = require("fs");
+// var server = http.createServer(handleServer);
 
-function handleServer(res, req) {
-  if (req.method === "GET" && req.url === "./file") {
-    fs.createReadStream("./node.html").pipe(res);
-  }
-}
+// function handleServer(res, req) {
+//   if (req.method === "GET" && req.url === "./stream") {
+//     fs.createReadStream("./node.html").pipe(res);
+//   }
+// }
 
-server.listen(5555, () => {
-  console.log("server will lisitin at port 5555");
-});
+// server.listen(5555, () => {
+//   console.log("server will lisitin at port 5555");
+// });
