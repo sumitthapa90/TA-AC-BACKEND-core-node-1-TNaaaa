@@ -43,7 +43,7 @@ var server = http.createServer(handleServer);
 
 function handleServer(req, res) {
   console.log(req.headers);
-  res.end("Welcome to campus");
+  res.end(req.headers["user-agent"]);
 }
 
 server.listen(5555, () => {
@@ -134,7 +134,12 @@ var server = http.createServer(handleServer);
 
 function handleServer(req, res) {
   res.setHeader("./Content-Type", "application/json");
-  res.end("Welcome to node");
+  res.end(
+    JSON.stringify({
+      sucess: true,
+      message: "Welcome to Node.js",
+    })
+  );
 }
 
 server.listen(8000, () => {
@@ -152,7 +157,9 @@ var http = require("http");
 var server = http.createServer(handleServer);
 
 function handleServer(req, res) {
-
+  console.log(req.method);
+  res.writeHead(404, { "Content-Type": "text/html" });
+  res.end("<h2>posted for first time</h2>");
 }
 server.listen(5050, () => {
   console.log("server listening on port 5050");
@@ -177,7 +184,7 @@ function handleServer(req, res) {
     res.setHeader("Content-Type", "text/html");
     res.end("<h2> Sumit</h2>");
   } else {
-    res.writeHead(404, { "Content-Type": "text/html" });
+    res.statusCode = 404;
     res.end("<h2> page not found </h2>");
   }
 }
@@ -187,8 +194,6 @@ server.listen(2345, () => {
 // Q. Handle 2 requests on same route with different method
 //     1. GET on '/users' route where return a simple HTML form with name and email field
 //     2. POST on '/users' route with a message 'Posted for the second time'.
-
-
 
 // Q. create a server and handle query params from the request on following url i.e. `/users?email=nodeserver@gmail.com` from browser
 
