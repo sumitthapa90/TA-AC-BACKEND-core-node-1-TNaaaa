@@ -130,37 +130,29 @@ table {
 
 /* MY CSS */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   background-image: url("/block-BNaaav/assets/image/thumb-1920-85305.jpg");
   background-size: cover;
   padding: 1rem;
 }
-
-header {
-  text-align: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-h1 {
-  font-size: 3rem;
-  color: white;
-  font-family: "Caveat", cursive;
+a {
+  color: orange;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 img {
-  box-shadow: white 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px,
-    rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  width: 400px;
-  border: 2px solid white;
-  border-radius: 10px;
+  width: 300px;
 }
-
-.img-container {
-  text-align: center;
-}
-h2 {
+h1 {
   font-size: 2rem;
   color: white;
-  text-align: center;
 }
 p {
   margin-top: 1rem;
